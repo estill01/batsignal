@@ -1,6 +1,8 @@
 <%= semantic_form_for [@user, @agenda] do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
-    <%= f.input :private, :as => :checkbox %>
+    <%= f.input :description %>
+    <%= f.input :private, :as => :check_boxes, :collection => ["Yes"] %>
   <% end %>
+  <%= f.submit %>
 <% end %>

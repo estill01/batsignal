@@ -1,11 +1,2 @@
-Sesison controller issues with routing bad signin attempts to sessions#create
-	> keeps going to sessions#new for some reason...
-
-Can log in with legitimate credentials fine if use username
-	> not currently working if use email address as first login param
-		>> odd routing on failed login attempts
-
-
-
-
+Add in private agendas after this initial pass on core system
 

@@ -6,10 +6,21 @@ Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinaliz
     <%= link_to "Edit Profile", edit_user_path(@user) %>
   </div>
 <% end %>
+
 <br/>
 <h2>Agendas</h2>
-<% @agendas.each do |agenda| %>
-<div id="agenda_#{agenda.id}">
-  <%= link_to agenda.name, agenda_path(agenda) %>
-</div>
+
+<% if @user == current_user %>
+  <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
+<% end %>
+
+<% unless @agendas.empty? %>
+  <% @agendas.each do |agenda| %>
+    <div id="agenda_#{agenda.id}">
+      <%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
+      <%= truncate(agenda.description, :length => 100 ) %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No agendas</p>
 <% end %>

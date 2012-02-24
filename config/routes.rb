@@ -2,11 +2,12 @@ Batsignal::Application.routes.draw do
 #  root :to => 'signups#new'
   root :to => 'users#new'
   resources :users do
-    member do
-      resources :agendas
-      match '/' => 'agendas#index'
-    end
+    resources :agendas
   end
+
+  match '/agendas' => 'agendas#all'
+  
+
   resources :sessions 
 
   post 'login' => 'sessions#create'

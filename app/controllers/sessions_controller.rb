@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
     if @user = login(params[:username], params[:password]) 
       redirect_to user_path(@user), :notice => "Welcome back to Agendo."
     else
-      flash.now[:error] = "Error logging in."
-      render 'sessions#new'
+      redirect_to login_path
+      flash[:error] = "Error logging in."
     end
   end
 
