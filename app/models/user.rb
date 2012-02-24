@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :agendas
 
+  attr_accessible :name, :email
+
   validates :username, :uniqueness => true
   validates :password, :length => {:minimum => 4}
 

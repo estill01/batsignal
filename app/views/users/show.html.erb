@@ -1,4 +1,7 @@
 <h1><%= @user.username %></h1>
+<%= link_to "Back", :back %>
+
+<br/>
 Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
 
 <% if @user == current_user %>
