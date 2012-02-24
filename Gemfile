@@ -4,6 +4,9 @@ gem 'rails', '3.2.0'
 gem 'pg'
 gem 'bourbon'
 gem 'sorcery'
+gem 'formtastic'
+
+gem 'twilio-ruby'
 
 
 # Gems used only for assets and not required
@@ -34,3 +37,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+# gem 'rabl' 

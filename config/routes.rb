@@ -1,4 +1,21 @@
 Batsignal::Application.routes.draw do
+#  root :to => 'signups#new'
+  root :to => 'users#new'
+  resources :users
+  resources :sessions 
+
+  post 'login' => 'sessions#create'
+  get 'login' => 'sessions#new'
+
+  match 'signup' => 'users#new'
+  match 'logout' => 'sessions#destroy'
+
+
+
+
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

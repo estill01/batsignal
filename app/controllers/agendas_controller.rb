@@ -1,0 +1,2 @@
+class AgendasController < ApplicationController
+end
