@@ -1,2 +1,4 @@
 Add in private agendas after this initial pass on core system
 
+Fix 'agendas#all'
+	controller doesn't work too good. der.

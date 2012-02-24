@@ -1,8 +1,11 @@
 class AgendasController < ApplicationController
   before_filter :require_login, :except => [:all, :index, :show]
 
-  def all
-    @agendas = Agenda.find(:all)
+  def all   # TODO: fix and fix the view
+    @users = User.find(:all)
+    @agendas = @users.each do |user|
+      user.agendas.find(:all) 
+    end
   end
 
   def index

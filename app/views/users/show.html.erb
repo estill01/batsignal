@@ -15,12 +15,7 @@ Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinaliz
 <% end %>
 
 <% unless @agendas.empty? %>
-  <% @agendas.each do |agenda| %>
-    <div id="agenda_#{agenda.id}">
-      <%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
-      <%= truncate(agenda.description, :length => 100 ) %>
-    </div>
-  <% end %>
+  <%= render :partial => 'agendas/agenda', :collection => @agendas, :as => :agenda %>
 <% else %>
   <p>No agendas</p>
 <% end %>
