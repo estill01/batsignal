@@ -28,6 +28,8 @@ class AgendasController < ApplicationController
   def create
     @user = current_user
     @agenda = @user.agendas.new(params[:agenda])
+    @agenda.created_by_user_id = @user.id
+    @agenda.original_agenda_id = @agenda.id
 
     if @agenda.save
       flash.now[:notice] = "Agenda added"

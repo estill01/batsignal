@@ -11,15 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120224210723) do
+ActiveRecord::Schema.define(:version => 20120225075011) do
 
   create_table "agendas", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.boolean  "private",     :default => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.boolean  "private",               :default => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.text     "description"
+    t.integer  "created_by_user_id"
+    t.integer  "forked_from_user_id"
+    t.datetime "forked_at"
+    t.integer  "forked_from_agenda_id"
+    t.integer  "original_agenda_id"
+  end
+
+  create_table "allies", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "agenda_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

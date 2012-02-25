@@ -1,6 +1,6 @@
-<ul id="agendas">
+<ol id="agendas">
   <%= content_tag_for :li, agenda do %>
     <%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
     <%= truncate(agenda.description, :length => 100 ) %>
   <% end %>
-</ul>
+</ol>

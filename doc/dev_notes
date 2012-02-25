@@ -2,3 +2,28 @@ Add in private agendas after this initial pass on core system
 
 Fix 'agendas#all'
 	controller doesn't work too good. der.
+
+Associate allies and liabilities with Agendas
+
+
+Fix the ordering thing for agenda partials
+	> see "user#show"
+
+
+User
+	has_many Allies
+	Agenda
+		has_many :allies
+
+
+user_id	allie_id
+
+	Allies
+	allie_id user_id
+	user_id agenda_id allie_id
+	
+	user.allies
+	user.agendas.allies
+	agenda.allies
+
+
