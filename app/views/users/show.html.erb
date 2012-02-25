@@ -18,7 +18,12 @@ Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinaliz
 <% end %>
 
 <% unless @agendas.empty? %>
-  <%= render :partial => 'agendas/agenda', :collection => @agendas, :as => :agenda %>
+  <%= render :partial => 'agendas/agendas', :collection => @agendas, :as => :agenda %>
 <% else %>
   <p>No agendas</p>
+<% end %>
+
+<%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
+<% if current_user %>
+  <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
 <% end %>
