@@ -2,7 +2,9 @@ Batsignal::Application.routes.draw do
 #  root :to => 'signups#new'
   root :to => 'users#new'
   resources :users do
-    resources :agendas
+    resources :agendas do
+      collection { post :sort }
+    end
   end
 
   match '/agendas' => 'agendas#all'

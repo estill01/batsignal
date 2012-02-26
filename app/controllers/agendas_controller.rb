@@ -68,4 +68,12 @@ class AgendasController < ApplicationController
       flash.now[:error] = "Was unable to delete Agenda."
     end
   end
+
+  def sort
+    params[:agenda].each_with_index do |id, index|
+      Agenda.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
+
 end

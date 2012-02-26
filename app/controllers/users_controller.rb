@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @agendas = @user.agendas
+    @agendas = @user.agendas.order("position")
   end
 
   def new

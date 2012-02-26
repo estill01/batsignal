@@ -1,7 +1,7 @@
-<ol id="agendas">
+<ol id="agendas" data-update-url="<%= sort_user_agendas_url(@user) %>">
   <% @agendas.each do |agenda| %>
     <%= content_tag_for :li, agenda do %>
-      <%= list_agenda(@user, agenda) %>
+      <%= render :partial => "agendas/agenda", :locals => {:agenda => agenda} %>
     <% end %>
   <% end %>
 </ol>

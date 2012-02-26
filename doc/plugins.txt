@@ -1,14 +1,69 @@
+https://github.com/jeffp/wizardly
+    multi-step 'wizards' => should be good for the sign up process
+
+https://github.com/swanandp/acts_as_list
+    better sortable lists
+    sort agendas
+    sort agents
+    sort agents on agendas
+    better(?) alternative: https://github.com/12spokes/acts_as_restful_list
+
+https://github.com/mbleigh/acts-as-taggable-on
+    tagging/associating users/agents with agendas
+    alternative: https://github.com/bradphelan/rocket_tag
+
 https://github.com/mceachen/closure_tree
     agenda forking trees
+
 https://github.com/collectiveidea/acts_as_audited
     agenda change tracking
     user change tracking
     roster change tracking
-https://github.com/mbleigh/acts-as-taggable-on
-    tagging/associating users/agents with agendas
-    alternative: https://github.com/bradphelan/rocket_tag
-https://github.com/swanandp/acts_as_list
-    better sortable lists
-    better(?) alternative: https://github.com/12spokes/acts_as_restful_list
+
 https://github.com/harvesthq/ranked-model
     could be useful for ranking possible phone call matches
+    
+https://github.com/plataformatec/simple_form
+    form builder with cool features around has_many resource
+        > provides a selector to choose which one of the many
+        
+https://github.com/paulasmuth/recommendify
+    interaction-based recommendation engine
+        useful for 
+            'people who follow this person also follow these people'
+            'people who talk to this person also talk to these people' // so add them as agents
+        alternatives:
+            https://github.com/diogenes/coletivo
+                rating-based: people who rate this similarly to you rated these other items similarly too
+            https://github.com/davidcelis/recommendable
+                like/dislike-based: should be useful for post-call follow-up data collection
+
+https://github.com/tcocca/acts_as_follower
+https://github.com/cmer/socialization
+    follower stuff
+
+https://github.com/pluginaweek/state_machine
+    dynamic state machines // dope sauce
+    alternative: https://github.com/geekq/workflow // dynamic?
+    
+    http://www.cs.usfca.edu/~jbovet/vas.html
+    visual automat simulator
+
+    pair one of these with a forum / threaded comments
+    + like/dislike
+    + recommendation engine
+    + javascript interface (raphael) to construct dsm would be quite cool
+
+https://github.com/rubyist/aasm 
+    static state machine; good for restricting access based on email/account verification
+    or other metrics
+    alternative: https://github.com/mdh/ssm
+        
+        
+        
+I want to have auto-complete / recommendations for agendas when
+assigning to an agent.
+    > not a drop-down
+    > go to a user page/whatnot
+    > start typing in the agendas you want to associate them with
+    > create new agendas if what the user is typing doesn't exist yet

@@ -9,7 +9,10 @@ jQuery ->
 		current_user_id = $("#user_id").val()
 
 		if (user_id == current_user_id)
-			$("#agendas").sortable()
-
+			$("#agendas").sortable
+				axis: 'y'
+				update: ->
+					$.post($(this).data('update-url'), $(this).sortable('serialize'))
+				
 	ownSortable()
 

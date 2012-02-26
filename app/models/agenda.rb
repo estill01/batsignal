@@ -1,6 +1,7 @@
 class Agenda < ActiveRecord::Base
+  acts_as_list
+
   belongs_to :user
-#  has_many :agents, :class => "User"
 
   attr_accessible :user_id, :name, :description, :private
 
