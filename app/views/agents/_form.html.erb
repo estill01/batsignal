@@ -1,0 +1,12 @@
+<%= semantic_form_for[@user, @agent] do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :username %>
+    <% if @agenda %>
+      <%= f.input :agenda_id, :as => :hidden %>
+    <% else %>
+      <%= f.input :agenda_id %>     
+    <% end %>
+    <%= f.submit %>
+  <% end %>
+<% end %>
+

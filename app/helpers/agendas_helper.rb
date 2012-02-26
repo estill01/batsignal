@@ -5,6 +5,7 @@ module AgendasHelper
     @agenda = @user.agendas.find(params[:id])
     
     @fork = @agenda.dup
+
     @fork.user_id = current_user.id
     @fork.forked_from_user_id = @user.id
     @fork.forked_at = local_to_utc(Time.now)

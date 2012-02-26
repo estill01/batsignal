@@ -1,6 +1,9 @@
 <ol id="agendas">
-  <%= content_tag_for :li, agenda do %>
-    <%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
-    <%= truncate(agenda.description, :length => 100 ) %>
+  <% @agendas.each do |agenda| %>
+    <%= content_tag_for :li, agenda do %>
+      <%= list_agenda(@user, agenda) %>
+    <% end %>
   <% end %>
 </ol>
+
+

@@ -29,8 +29,6 @@
 <% if current_user && current_user.id == @user.id %>
   <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete %>
 <% else %>
-  <%= button_tag(:type => 'button') do %>
-    <% fork_agenda %>
-  <% end %>
+  <%= link_to "Fork Agenda" %>
 <% end %>
 

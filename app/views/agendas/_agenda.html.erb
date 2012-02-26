@@ -1,4 +1,2 @@
-<div id="agenda_#{agenda.id}">
-  <%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
-  <%= truncate(agenda.description, :length => 100 ) %>
-</div>
+<%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
+<%= truncate(agenda.description, :length => 100 ) %>

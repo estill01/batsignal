@@ -6,7 +6,6 @@ Batsignal::Application.routes.draw do
   end
 
   match '/agendas' => 'agendas#all'
-  
 
   resources :sessions 
 

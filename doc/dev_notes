@@ -1,3 +1,36 @@
+
+User
+	Agents
+	
+User has_many :agents
+
+
+
+
+
+
+
+
+User	
+	Agents
+		type => ally
+		type => liability
+
+	Allies (follows type1)
+		
+	Liabilities (follows type2)
+		
+
+	friends
+
+	enemies
+
+
+
+
+
+
+
 Add in private agendas after this initial pass on core system
 
 Fix 'agendas#all'
@@ -25,5 +58,22 @@ user_id	allie_id
 	user.allies
 	user.agendas.allies
 	agenda.allies
+
+ create_table "agendas", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.boolean  "private",               :default => false
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
+    t.text     "description"
+                fork_count
+
+                fork_id
+                agenda_id
+                user_id
+    t.integer  "forked_from_user_id"
+    t.integer  "forked_from_agenda_id"
+    t.integer  "original_agenda_id"
+                
 
 

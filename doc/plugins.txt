@@ -1,0 +1,14 @@
+https://github.com/mceachen/closure_tree
+    agenda forking trees
+https://github.com/collectiveidea/acts_as_audited
+    agenda change tracking
+    user change tracking
+    roster change tracking
+https://github.com/mbleigh/acts-as-taggable-on
+    tagging/associating users/agents with agendas
+    alternative: https://github.com/bradphelan/rocket_tag
+https://github.com/swanandp/acts_as_list
+    better sortable lists
+    better(?) alternative: https://github.com/12spokes/acts_as_restful_list
+https://github.com/harvesthq/ranked-model
+    could be useful for ranking possible phone call matches

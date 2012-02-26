@@ -18,7 +18,7 @@ Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinaliz
 <% end %>
 
 <% unless @agendas.empty? %>
-  <%= render :partial => 'agendas/agendas', :collection => @agendas, :as => :agenda %>
+  <%= render :partial => 'agendas/agendas'%>
 <% else %>
   <p>No agendas</p>
 <% end %>

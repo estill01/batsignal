@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
   has_many :agendas
-  has_many :allies
-  has_many :allies, :through => :agendas
+#  has_many :agents, :class => "User"
+#  has_many :agents, :through => :agendas
 
   attr_accessible :username, :email, :phone_number, :password
   attr_accessor :password
