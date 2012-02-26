@@ -1,6 +1,12 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history]
+
+  acts_as_follower
+  acts_as_followable
+
   has_many :agendas
 #  has_many :agents, :class => "User"
 #  has_many :agents, :through => :agendas

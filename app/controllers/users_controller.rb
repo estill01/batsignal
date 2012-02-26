@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :find_user, :except => [:index, :new, :create]
+
   def index
     @users = User.find(:all)
   end
@@ -29,10 +31,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    require_login
     @user = current_user
   end
 
   def update
+    require_login
     @user = current_user
 
     if @user.update_attributes(params[:user])
@@ -44,9 +48,18 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    require_login
     @user = current_user
     @user.destroy
     logout
     redirect_to root_url, :notice => "Account deleted."
   end
+
+  private
+    def find_user
+      User.find(params[:id])
+      if request.path != user_path(@user)
+        redirect_to @user, :status => :moved_permanently
+      end
+    end
 end

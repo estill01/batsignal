@@ -1,5 +1,6 @@
 class AgendasController < ApplicationController
   before_filter :require_login, :except => [:all, :index, :show]
+  before_filter :find_agenda, :except => [:index, :new, :create]
 
   def all   # TODO: fix and fix the view
     @users = User.find(:all)
@@ -76,4 +77,11 @@ class AgendasController < ApplicationController
     render nothing: true
   end
 
+  private
+    def find_agenda
+      Agenda.find(params[:id])
+      if request.path != user_agenda_path(@user, @agenda)
+        redirect_to user_agenda_path(@user, @agenda), :status => :moved_permanently
+      end
+    end
 end

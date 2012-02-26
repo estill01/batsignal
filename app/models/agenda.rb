@@ -1,4 +1,7 @@
 class Agenda < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :scoped], :scope => :user
+
   acts_as_list
 
   belongs_to :user

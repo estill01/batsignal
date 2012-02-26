@@ -7,6 +7,8 @@ Batsignal::Application.routes.draw do
     end
   end
 
+  resources :agents   # hijack the follower model/etc
+
   match '/agendas' => 'agendas#all'
 
   resources :sessions 
