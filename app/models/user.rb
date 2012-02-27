@@ -20,4 +20,9 @@ class User < ActiveRecord::Base
  
   # enable carrierwave image uploader 
   mount_uploader :avatar, AvatarUploader
+
+  acts_as_audited
+  acts_as_audited :associated_with => :agenda
+  
+
 end

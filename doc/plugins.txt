@@ -1,7 +1,7 @@
 https://github.com/jeffp/wizardly
     multi-step 'wizards' => should be good for the sign up process
 
-https://github.com/swanandp/acts_as_list
+https://github.com/swanandp/acts_as_list        *
     better sortable lists
     sort agendas
     sort agents
@@ -15,7 +15,7 @@ https://github.com/mbleigh/acts-as-taggable-on
 https://github.com/mceachen/closure_tree
     agenda forking trees
 
-https://github.com/collectiveidea/acts_as_audited
+https://github.com/collectiveidea/acts_as_audited       *
     agenda change tracking
     user change tracking
     roster change tracking

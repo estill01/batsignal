@@ -11,4 +11,6 @@ class Agenda < ActiveRecord::Base
   validate :name, :presence => true
   validate :user_id, :presence => true
 
+  acts_as_audited
+  has_associated_audits
 end
