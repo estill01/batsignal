@@ -40,4 +40,6 @@ gem 'jquery-rails'
 gem 'rabl' 
 gem 'acts_as_list'
 gem 'acts_as_follower'
-gem "friendly_id", "~> 4.0.0" 
+gem 'friendly_id', '~> 4.0.0' 
+gem 'rmagick'												# replace with minimagick?
+gem 'carrierwave'

@@ -1,17 +1,11 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  extend FriendlyId
-  friendly_id :username, use: [:slugged, :history]
-
+  has_many :agendas
   acts_as_follower
   acts_as_followable
 
-  has_many :agendas
-#  has_many :agents, :class => "User"
-#  has_many :agents, :through => :agendas
-
-  attr_accessible :username, :email, :phone_number, :password
+  attr_accessible :username, :email, :phone_number, :password, :avatar
   attr_accessor :password
 
   validates :username, :uniqueness => true
@@ -20,4 +14,10 @@ class User < ActiveRecord::Base
   validates :password, :presence => true
   validates :password, :length => {:minimum => 4}
 
+  # enable semantic urls (i.e., users/estill01 vs. users/6)
+  extend FriendlyId
+  friendly_id :username, use: [:slugged, :history]
+ 
+  # enable carrierwave image uploader 
+  mount_uploader :avatar, AvatarUploader
 end

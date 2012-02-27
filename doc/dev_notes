@@ -1,3 +1,9 @@
+# INSTALLING IMAGEMAGICK
+	http://rmagick.rubyforge.org/install-osx.html
+
+	Getting ImageMagick installed will take a long time.
+	You have to install RMagick first and build them both; it's beastly.
+	But, these are required... to make thumbnail-sized images out of user-uploaded files.
 
 User
 	Agents

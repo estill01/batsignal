@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120226205439) do
+ActiveRecord::Schema.define(:version => 20120226222237) do
 
   create_table "agendas", :force => true do |t|
     t.integer  "user_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20120226205439) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.string   "slug"
+    t.string   "avatar"
   end
 
   add_index "users", ["slug"], :name => "index_users_on_slug", :unique => true
