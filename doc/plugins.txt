@@ -38,7 +38,7 @@ https://github.com/paulasmuth/recommendify
             https://github.com/davidcelis/recommendable
                 like/dislike-based: should be useful for post-call follow-up data collection
 
-https://github.com/tcocca/acts_as_follower
+https://github.com/tcocca/acts_as_follower      *
 https://github.com/cmer/socialization
     follower stuff
 

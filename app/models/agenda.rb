@@ -3,6 +3,7 @@ class Agenda < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :scoped], :scope => :user
 
   acts_as_list
+  acts_as_tree
 
   belongs_to :user
 

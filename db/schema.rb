@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120227010731) do
+ActiveRecord::Schema.define(:version => 20120227060214) do
+
+  create_table "agenda_hierarchies", :id => false, :force => true do |t|
+    t.integer "ancestor_id",   :null => false
+    t.integer "descendant_id", :null => false
+    t.integer "generations",   :null => false
+  end
+
+  add_index "agenda_hierarchies", ["ancestor_id", "descendant_id"], :name => "index_agenda_hierarchies_on_ancestor_id_and_descendant_id", :unique => true
+  add_index "agenda_hierarchies", ["descendant_id"], :name => "index_agenda_hierarchies_on_descendant_id"
 
   create_table "agendas", :force => true do |t|
     t.integer  "user_id"
@@ -27,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20120227010731) do
     t.integer  "original_agenda_id"
     t.integer  "position"
     t.string   "slug"
+    t.integer  "parent_id"
   end
 
   add_index "agendas", ["slug"], :name => "index_agendas_on_slug", :unique => true
