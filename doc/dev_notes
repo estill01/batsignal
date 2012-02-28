@@ -1,6 +1,20 @@
 Do agenda forking
+	Or call the "add_child" method:
+
+	parent = Tag.create(:name => 'Parent')
+	grandparent.add_child parent
+
+	--
+	Note that any other AR fields can be set with the second, optional attributes argument.
+
+	child = Tag.find_or_create_by_path(%w{home chuck Photos"}, {:tag_type => "File"})k
+
+
+
 Do rosters / call lists
 	watch people
+		do activity feed 
+	
 
 
 # CARRIERWAVE GOODNESS

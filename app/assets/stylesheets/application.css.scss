@@ -22,7 +22,7 @@ body {
 //
 // topNavbar
 /////////////////////////////////////////////////
-$nav_height: 30px;
+$nav_height: 20px;
 #top_nav {
 	display:block;
 	position:fixed;
@@ -81,7 +81,10 @@ $nav_height: 30px;
 			color: #BA7D27;
 			color: #FFB64F;
 			color: #FFD8A1;
-			font-size: 1.5em;
+			color: white;
+			color: #FFE6C2;
+			color: #FFEFD9;
+			font-size: 17px;
 			text-shadow: 0px -2px 1px #8A5101, 0px 1px 1px #D98D00;
 			text-shadow: 0px -2px 1px #C97600, 0px 1px 1px #D98D00;
 			text-shadow: 0px -2px 1px #C27100, 0px 1px 1px #D98D00;
