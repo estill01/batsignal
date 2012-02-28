@@ -4,8 +4,11 @@ Batsignal::Application.routes.draw do
   resources :users do
     resources :agendas do
       collection { post :sort }
+      member { post :fork }
     end
   end
+
+  match 'users/:id/add' => 'follows#create'
 
   resources :agents   # hijack the follower model/etc
 

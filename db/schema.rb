@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120228012254) do
+ActiveRecord::Schema.define(:version => 20120228020800) do
 
   create_table "agenda_hierarchies", :id => false, :force => true do |t|
     t.integer "ancestor_id",   :null => false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20120228012254) do
     t.integer  "parent_id"
   end
 
-  add_index "agendas", ["slug"], :name => "index_agendas_on_slug", :unique => true
+  add_index "agendas", ["slug"], :name => "index_agendas_on_slug"
 
   create_table "audits", :force => true do |t|
     t.integer  "auditable_id"

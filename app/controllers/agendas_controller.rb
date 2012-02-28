@@ -1,6 +1,6 @@
 class AgendasController < ApplicationController
   before_filter :require_login, :except => [:all, :index, :show]
-  before_filter :find_agenda, :except => [:index, :new, :edit, :create]
+  before_filter :find_agenda, :except => [:index, :new, :edit, :create, :fork]
 
   def all   # TODO: fix and fix the view
     @users = User.find(:all)
@@ -77,6 +77,24 @@ class AgendasController < ApplicationController
     render nothing: true
   end
 
+  def fork
+    @user = User.find(params[:user_id])
+    @agenda = @user.agendas.find(params[:id])
+
+    @forker = current_user
+    @fork = @agenda.dup
+    @fork.user_id = @forker.id
+    
+    if @fork.save
+      @agenda.add_child @fork
+      render 'show'
+      flash.now[:notice] = "Forked Agenda."
+    else
+      render 'show'
+      flash.now[:error] = "Failed to fork Agenda."
+    end
+  end
+  
   private
     def find_agenda
       Agenda.find(params[:id])

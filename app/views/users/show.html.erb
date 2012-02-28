@@ -1,30 +1,41 @@
-<%= link_to "Back", :back %>
-<h1><%= @user.username %></h1>
-<%= image_tag @user.avatar_url %>
-
-<br/>
-Member since: <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %>
-
-<% if @user == current_user %>
-  <div>
-    <%= link_to "Edit Profile", edit_user_path(@user) %>
+<section id="left-side">
+  <div id="profile-info">
+    <%= image_tag @user.avatar_url , :size => '100x100'%><br/>
+    Username: <%= @user.username %><br/>
+    Member since:<br/>
+    <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %><br/>
+    <br/>
   </div>
-<% end %>
 
-<br/>
-<h2>Agendas</h2>
+  <% if @user == current_user %>
+    <div>
+      <%= link_to "Edit Profile", edit_user_path(@user) %>
+    </div>
+  <% end %>
+</section>
 
-<% if @user == current_user %>
-  <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
-<% end %>
+<section id="right-side">
+  <div id="add-to-pool">
+    <% unless @user == current_user %>
+      <%= link_to "Add to call pool", root_path %>
+    <% end %>
+  </div>
+  <br/>
+  <h2>Here's what I'm up to</h2>
+  <h3>Add some links and thoughts to help me out.</h3>
 
-<% unless @agendas.empty? %>
-  <%= render :partial => 'agendas/agendas'%>
-<% else %>
-  <p>No agendas</p>
-<% end %>
+  <% if @user == current_user %>
+    <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
+  <% end %>
 
-<%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
-<% if current_user %>
-  <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
-<% end %>
+  <% unless @agendas.empty? %>
+    <%= render :partial => 'agendas/agendas'%>
+  <% else %>
+    <p>No agendas</p>
+  <% end %>
+
+  <%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
+  <% if current_user %>
+    <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
+  <% end %>
+</section>
