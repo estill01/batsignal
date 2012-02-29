@@ -1,6 +1,6 @@
 <section id="left-side">
   <div id="profile-info">
-    <%= image_tag @user.avatar_url, :size => "130x150" %><br/>
+    <%= image_tag @user.avatar_url(:profile) %><br/>
     <% if @user == current_user %>
       <div>
         <%= link_to "Edit Profile", edit_user_path(@user) %>

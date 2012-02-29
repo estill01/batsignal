@@ -18,6 +18,7 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier'
+	gem 'twitter-bootstrap-rails'
 end
 
 gem 'jquery-rails'
@@ -41,8 +42,8 @@ gem 'rabl'
 gem 'acts_as_list'
 gem 'acts_as_follower'
 gem 'friendly_id', '~> 4.0.0' 
-# gem 'rmagick'												  # replace with minimagick?
 gem 'mini_magick'
+gem 'rmagick'												  # replace with minimagick?
 gem 'carrierwave'											# image uploading
 gem 'acts_as_audited', '2.0.0'				# user interaction/change history
 gem 'closure_tree'
