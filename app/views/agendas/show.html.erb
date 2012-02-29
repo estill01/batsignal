@@ -1,7 +1,9 @@
 <h1>Agenda: <%= @agenda.name %></h1>
 <%= link_to 'Back', user_path(@user) %>
 <div id="agenda-details">
-  Created at: <%= @agenda.created_at %>
+  Created at: <%= @agenda.created_at %><br/>
+  Originator: <%= @root.username%>
+  Forked from: <%= @parent.username%>
 </div>
 <br/>
 <div id="agenda-description">

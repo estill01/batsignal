@@ -8,7 +8,8 @@ Batsignal::Application.routes.draw do
     end
   end
 
-  match 'users/:id/add' => 'follows#create'
+  match 'users/:id/add' => 'follows#create', :as => 'add'
+  match 'users/:id/remove' => 'follows#destroy', :as => 'remove'
 
   resources :agents   # hijack the follower model/etc
 

@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   acts_as_follower
   acts_as_followable
 
-  attr_accessible :username, :email, :phone_number, :password, :avatar
+  attr_accessible :username, :email, :phone_number, :password, :avatar, :avatar_cache
   attr_accessor :password
 
   validates :username, :uniqueness => true

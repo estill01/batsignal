@@ -1,41 +1,54 @@
 <section id="left-side">
   <div id="profile-info">
-    <%= image_tag @user.avatar_url , :size => '100x100'%><br/>
+    <%= image_tag @user.avatar_url, :size => "130x150" %><br/>
+    <% if @user == current_user %>
+      <div>
+        <%= link_to "Edit Profile", edit_user_path(@user) %>
+      </div>
+    <% end %>
     Username: <%= @user.username %><br/>
     Member since:<br/>
     <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %><br/>
+    <div id="add-to-pool">
+      <% unless @user == current_user %>
+        <%= link_to "Add to call pool", add_path %>
+      <% end %>
+    </div>
     <br/>
   </div>
 
-  <% if @user == current_user %>
-    <div>
-      <%= link_to "Edit Profile", edit_user_path(@user) %>
-    </div>
-  <% end %>
+  <section id="agendas">
+    Agendas
+    <section id="active-agendas">
+      <h1>Active</h1>
+      <p id="agenda-header-note">
+        Help me with thoughts or links.
+      </p>
+
+      <div id="agenda-listing">
+        <% if @user == current_user %>
+          <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
+        <% end %>
+
+        <% unless @agendas.empty? %>
+          <%= render :partial => 'agendas/agendas'%>
+        <% else %>
+          <p>No agendas</p>
+        <% end %>
+
+        <%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
+        <% if current_user %>
+          <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
+        <% end %>
+      </div>
+    </section>
+    <section id="background-agendas">
+      <h1>Background</h1>
+    </section>
+  </section>
 </section>
 
 <section id="right-side">
-  <div id="add-to-pool">
-    <% unless @user == current_user %>
-      <%= link_to "Add to call pool", root_path %>
-    <% end %>
-  </div>
-  <br/>
-  <h2>Here's what I'm up to</h2>
-  <h3>Add some links and thoughts to help me out.</h3>
-
-  <% if @user == current_user %>
-    <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
-  <% end %>
-
-  <% unless @agendas.empty? %>
-    <%= render :partial => 'agendas/agendas'%>
-  <% else %>
-    <p>No agendas</p>
-  <% end %>
-
-  <%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
-  <% if current_user %>
-    <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
-  <% end %>
+    Have something I should know?
+    <br/>
 </section>

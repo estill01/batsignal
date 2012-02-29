@@ -1,0 +1,48 @@
+#left-side {
+	position: relative;
+	display: inline;
+	float: left;
+	height: auto;
+	width: 20%;
+	max-width:200px;
+	min-width: 150px;
+	margin: 0;
+	padding: 15px 0;
+	font-size: 0.9em;
+	border-right:2px solid red;
+
+	#agenda {
+		h1 {
+			font-size:16px;
+			font-weigth: bold;
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#agenda-header-note {
+			margin: 0;
+		}
+
+		.agenda-description {
+			color: #333333;
+		}
+	}
+
+	#agenda-listing {
+		li {
+			background-color: white;
+		}
+	}
+}
+
+#right-side {
+	position: absolute;
+	display: inline;
+	float: left;
+	height: 100%;
+	min-width: 80%;
+	margin: 0;
+	padding: 0;
+	border-left: 2px solid blue;
+	background-color: yellow;
+}

@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @agendas = @user.agendas.order("position")
+    @follows = @user.all_follows
   end
 
   def new

@@ -20,6 +20,18 @@ body {
 	font-size: 16px;
 }
 
+ol {
+	padding: 0;
+}
+li {
+	list-style-type: none;
+	margin: 0 0 10px 0;
+	cursor: move;
+	a {
+		cursor: move;
+	}
+}
+
 //
 // topNavbar
 /////////////////////////////////////////////////
@@ -29,6 +41,7 @@ $nav_height: 20px;
 	position:fixed;
 	top:0;
 	left: 0;
+	z-index: 10;
 	padding:{
 		top: 3px;
 		bottom: 3px;
@@ -46,7 +59,7 @@ $nav_height: 20px;
 		text-decoration: none;
 		&:hover { color: red }
 	}
-	@include box-shadow(0px 2px 8px 1px #a3a3a3);
+	@include box-shadow(0px 2px 8px #a3a3a3);
 	border: {
 		bottom: 2px solid orange;
 	}

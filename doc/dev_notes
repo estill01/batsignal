@@ -1,3 +1,11 @@
+Take a person, tag them to an Agenda
+Image processing
+	for thumb nails and shit
+Layouts and shit
+
+Forkable Agendas
+
+
 Do agenda forking
 	Or call the "add_child" method:
 
@@ -29,9 +37,15 @@ will also be good to have for attaching images to Agendas
 
 
 # INSTALLING IMAGEMAGICK
-	http://rmagick.rubyforge.org/install-osx.html
+	http://rmagick.rubyforge.org/install-osx.etml
 
-	Getting ImageMagick installed will take a long time.
+
+	eventually, the command is:
+		brew install -f imagemagick --disable-openmp
+	
+	this prevents getting a shitty version that segfaults.
+	
+	Getting ImageMagick installed might take a long time.
 	You have to install RMagick first and build them both; it's beastly.
 	But, these are required... to make thumbnail-sized images out of user-uploaded files.
 
