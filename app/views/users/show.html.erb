@@ -1,14 +1,12 @@
 <section id="left-side">
   <div id="profile-info">
     <%= image_tag @user.avatar_url(:profile) %><br/>
+    <%= @user.username %><br/>
     <% if @user == current_user %>
       <div>
         <%= link_to "Edit Profile", edit_user_path(@user) %>
       </div>
     <% end %>
-    Username: <%= @user.username %><br/>
-    Member since:<br/>
-    <%= @user.created_at.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %><br/>
     <div id="add-to-pool">
       <% unless @user == current_user %>
         <%= link_to "Add to call pool", add_path %>
@@ -49,6 +47,9 @@
 </section>
 
 <section id="right-side">
-    Have something I should know?
+    Here's what I'm doing
     <br/>
+    <p>
+    What should I know?
+    </p>
 </section>

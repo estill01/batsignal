@@ -11,6 +11,7 @@
   </div>
   <div id="nav_right">
     <% if logged_in? %>
+      <%= image_tag(current_user.avatar_url(:nav)) %>
       <%= link_to 'Log out', logout_path %>
     <% else %>
       <%= link_to 'Log in', login_path %> or <%= link_to 'Sign up', signup_path %>
