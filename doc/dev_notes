@@ -43,11 +43,20 @@ will also be good to have for attaching images to Agendas
 
 
 # INSTALLING IMAGEMAGICK
+	Step-by-step
+	------------
+	sudo brew update
+		// make sure you have the latest brew
+	sudo brew install librsvg
+		// this is a biggie but the key step; could take ~1 hr
+	brew install -f imagemagick --disable-openmp
+	bundle install
+
+	--------
 	http://rmagick.rubyforge.org/install-osx.etml
 
 
 	eventually, the command is:
-		brew install -f imagemagick --disable-openmp
 	
 	this prevents getting a shitty version that segfaults.
 	
@@ -55,6 +64,7 @@ will also be good to have for attaching images to Agendas
 	You have to install RMagick first and build them both; it's beastly.
 	But, these are required... to make thumbnail-sized images out of user-uploaded files.
 
+	// Out of date?
 	Issue:
 		After getting ImageMagick, I still couldn't gem install rmagick without getting an error.
 	Fix:
