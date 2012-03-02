@@ -1,57 +1,36 @@
 <div id="left-side">
-
-  <div id="profile-info">
-    <div id="profile-avatar">
-      <%= image_tag @user.avatar_url(:profile) %>
-    </div>
-    <div id="profile-username-background">
-      <div id="profile-username">
-        <p><%= @user.username %></p>
-      </div>
-    </div>
-  </div>
-
-  <div id="profile-action" class="well">
-    <% if @user == current_user %>
-        <%= link_to "Edit Profile", edit_user_path(@user), :class => "btn profile-action" %>
-    <% else %>
-        <%= link_to "Add to call pool", add_path , :class => "btn profile-action" %>
-    <% end %>
-  </div>
-
+  <%= render :partial => 'profile_info' %>
+  
   <section id="agendas">
-    Agendas
+
     <section id="active-agendas">
-      <h1>Active</h1>
-      <p id="agenda-header-note">
-        Help me with thoughts or links.
-      </p>
-        <% if @user == current_user %>
-          <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
-        <% end %>
-      <div id="agenda-listing" class="tabbable tabs-left">
+
+      <dt>Agendas</dt>
+
+        <div id="agenda-listing" class="tabbable tabs-left">
         <% unless @agendas.empty? %>
           <%= render :partial => 'agendas/agendas'%>
         <% else %>
           <p>No agendas</p>
         <% end %>
 
-        <%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
         <% if current_user %>
           <%= hidden_field_tag "current_user_id", current_user.id, { :id => "current_user_id" } %>
+        <% else %>
+          <%= hidden_field_tag "user_id", @user.id, { :id => "user_id" } %>
         <% end %>
+
       </div>
     </section>
+
     <section id="background-agendas">
-      <h1>Background</h1>
+      <dt>Background</dt>
     </section>
+
   </section>
 </div>
 
 <div id="right-side">
-    Here's what I'm doing
-    <br/>
-    <p>
-    What should I know?
-    </p>
+  <div data-pjax-container>
+  </div>
 </div>

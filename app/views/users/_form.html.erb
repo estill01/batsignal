@@ -1,7 +1,18 @@
 <%= simple_form_for @user, :multipart => true, :html => {:class => 'form-vertical'} do |f| %>
+    <% if params[:action] == 'edit' %>
+      <div id="image-container">
+        <%= image_tag(@user.avatar_url(:profile)) %>
+      </div>
+      <%= f.input :avatar, :as => :file, :label => 'Change avatar' %>
+      <%= f.input :avatar_cache, :as => :hidden %>
+    <% end %>
     <%= f.input :username%>
     <%= f.input :password %>
     <%= f.input :email %>
-    <%= f.input :phone_number, :hint => "We hate spam and won't do it." %>
+    <% if params[:action] == 'edit' %>
+      <%= f.input :phone_number %>
+    <% else %>
+      <%= f.input :phone_number, :hint => "We hate spam and don't do it." %>
+    <% end %>
     <%= f.button :submit %> 
 <% end %>

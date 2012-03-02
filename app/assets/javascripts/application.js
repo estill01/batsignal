@@ -15,4 +15,17 @@
 //= require jquery_ujs
 //= require jquery.pjax
 //= require bootstrap
+//= require users
 //= require_tree .
+
+jQuery ->
+
+  clearFlash = ->
+    $('#flash-container').click(function () {
+      $(this).delay(300).fadeOut(400);
+    });
+  clearFlash()
+
+  $('.dropdown-toggle').dropdown()
+
+

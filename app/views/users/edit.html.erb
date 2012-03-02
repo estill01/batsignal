@@ -1,6 +1,11 @@
-<h1><%= @user.username %></h1>
-<h2>Edit Account</h2>
+<div id="edit-container">
+    <h1><%= @user.username %></h1>
+    <h2>Edit Account</h2>
+    <%= link_to 'Cancel', :back %>
 
-<%= render 'form' %>
+  <div id="edit-container-content" class="well">
+    <%= render 'form' %>
 
-<%= link_to 'Back', :back %>
+    <%= link_to 'Cancel', :back %>
+  </div>
+</div>

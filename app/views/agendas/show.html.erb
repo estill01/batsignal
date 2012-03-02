@@ -29,6 +29,6 @@
 <br/>
 <br/>
 <% if current_user && current_user.id == @user.id %>
-  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn-danger"%>
+  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn btn-danger"%>
 <% end %>
 

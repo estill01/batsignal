@@ -51,13 +51,15 @@
 	#profile-username {
 		color: white;
 		font: 1.2em;
-		padding: 0;
 		text-align: center;
 		margin: 0;
-
+		padding: 0 0 2px 0;
+		font-weight: bold;
+		text-shadow: -1px -1px 1px #6B6149;
 		p {
 			margin: 0;
-			padding: 0;
+			padding: 3px 0px;
+			font-size: 1.3em;
 		}
 	}
 }
@@ -65,25 +67,7 @@
 #profile-action {
 	text-align: center;
 	.profile-action {
-		margin: 0;
-	}
-}
-
-
-
-
-#agenda {
-	#agenda-header-note {
-	}
-
-	.agenda-description {
-	//	color: #333333;
-	}
-}
-
-#agenda-listing {
-	li {
-	//	background-color: white;
+		margin: 3px auto;
 	}
 }
 

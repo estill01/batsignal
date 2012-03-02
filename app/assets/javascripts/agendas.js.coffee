@@ -14,7 +14,7 @@ jQuery ->
 				update: ->
 					$.post($(this).data('update-url'), $(this).sortable('serialize'))
 				
-	ownSortable()
 
 	$('.agenda a').pjax('[data-pjax-container]')
-
+	
+	

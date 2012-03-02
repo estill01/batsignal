@@ -9,6 +9,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @agendas = @user.agendas.order("position")
     @follows = @user.all_follows
+    if @user == current_user
+      @agenda = current_user.agendas.new
+    end
   end
 
   def new

@@ -11,9 +11,11 @@
  *= require_self
 */
 
+
 @import 'bourbon';
 @import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
 @import 'profile';
+@import 'profile-edit';
 
 .container {
 	margin-left: 25px;
@@ -26,4 +28,25 @@
 
 .well {
 	padding: 3px;
+}
+
+.btn-inverse.profile-action {
+	padding: 3px 10px;
+}
+
+#flash-container {
+}
+
+#navbar-user-menu {
+	margin: 5px 0 0 0;
+	height: 100%;
+	
+	ul {
+		margin: 0;
+	}
+	#nav-avatar {
+		background-color: white;
+		padding: 3px;
+		border: 1px solid #787878;
+	}
 }
