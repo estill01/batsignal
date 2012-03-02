@@ -1,48 +1,95 @@
-#left-side {
-	position: relative;
+
+// LEFT SIDE
+
+#left-side, #right-side {
 	display: inline;
+	position: relative;
 	float: left;
-	height: 100%;
-	width: 20%;
-	max-width:200px;
+	margin: 0px;
+	padding: 0px;
+	left: 0;
+}
+
+#left-side {
+	clear: left;
 	min-width: 150px;
+	max-width: 150px;
+
+}
+
+#right-side {
+	clear: right;
+}
+
+#profile-info {
+	position: relative;
+	display: block;
 	margin: 0;
-	padding: 15px 0;
-	font-size: 0.9em;
-	border-right:2px solid red;
+	padding: 0;
 
-	#agenda {
-		h1 {
-			font-size:16px;
-			font-weigth: bold;
-			margin: 0px;
-			padding: 0px;
-		}
+	#profile-avatar {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
 
-		#agenda-header-note {
-			margin: 0;
-		}
-
-		.agenda-description {
-			color: #333333;
+		img {
+			position: relative;
+			display: block;
+			clear: both;
 		}
 	}
 
-	#agenda-listing {
-		li {
-			background-color: white;
+	#profile-username-background {
+		position: relative;
+		display: block;
+		margin: 0;
+		padding: 0;
+		background-color: black;
+	}
+	
+	#profile-username {
+		color: white;
+		font: 1.2em;
+		padding: 0;
+		text-align: center;
+		margin: 0;
+
+		p {
+			margin: 0;
+			padding: 0;
 		}
 	}
 }
 
+#profile-action {
+	text-align: center;
+	.profile-action {
+		margin: 0;
+	}
+}
+
+
+
+
+#agenda {
+	#agenda-header-note {
+	}
+
+	.agenda-description {
+	//	color: #333333;
+	}
+}
+
+#agenda-listing {
+	li {
+	//	background-color: white;
+	}
+}
+
+
+
+// RIGHT SIDE 
+
 #right-side {
-	position: absolute;
-	display: inline;
-	float: left;
-	height: 100%;
-	min-width: 80%;
-	margin: 0;
-	padding: 0;
-	border-left: 2px solid blue;
-	background-color: yellow;
 }

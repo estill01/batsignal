@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'pg'
+gem 'rack-pjax'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'
@@ -19,8 +20,7 @@ gem 'acts_as_audited', '2.0.0'				# user interaction/change history
 gem 'closure_tree'
 
 gem 'bourbon'
-# gem 'formtastic'
-gem 'formtastic-bootstrap'
+gem 'simple_form'
 gem 'tabulous'
 
 gem 'mini_magick'

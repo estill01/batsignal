@@ -1,14 +1,7 @@
-<%= semantic_form_for @user, :multipart => true do |f| %>
-  <%= f.inputs do %>
-    <div id="user-form-avatar">
-      <%= image_tag @user.avatar_url if @user.avatar != nil %>   
-      <%= f.input :avatar, :as => :file %>
-      <%= f.input :avatar_cache, :as => :hidden %>
-    </div>
-    <%= f.input :username %>
-    <%= f.input :email %>
-    <%= f.input :phone_number %>
+<%= simple_form_for @user, :multipart => true, :html => {:class => 'form-vertical'} do |f| %>
+    <%= f.input :username%>
     <%= f.input :password %>
-  <% end %>
-  <%= f.submit %>
+    <%= f.input :email %>
+    <%= f.input :phone_number, :hint => "We hate spam and won't do it." %>
+    <%= f.button :submit %> 
 <% end %>

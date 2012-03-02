@@ -1,10 +1,6 @@
-<%= semantic_form_for [@user, @agenda] do |f| %>
-  <%= f.inputs do %>
+<%= simple_form_for [@user, @agenda], :html => {:class => 'form-horizontal'} do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :private, :as => :check_boxes, :collection => ["Yes"] %>
-  <% end %>
-  <%= f.buttons do %>
-    <%= f.commit_button :button_html => {:class => "primary"} %>
-  <% end %>
+    <%= f.button :submit %>
 <% end %>

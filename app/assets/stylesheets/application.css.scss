@@ -9,99 +9,21 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require formtastic-bootstrap
- *= require my_formtastic_changes
 */
 
 @import 'bourbon';
 @import 'agendo_hub';	// required for twitter bootstrap styles via bootstrap-sass.gem
 @import 'profile';
 
-//body {
-//	font-family: "helvetica";
-//	font-size: 16px;
-//	margin: 0px;
-//	padding: 0px;
-//}
-//
-//ol {
-//	padding: 0;
-//}
-//li {
-//	list-style-type: none;
-//	margin: 0 0 10px 0;
-//	cursor: move;
-//	a {
-//		cursor: move;
-//	}
-//}
-
-//
-// topNavbar
-/////////////////////////////////////////////////
-$nav_height: 20px;
-#top_nav {
-	display:block;
-	position:relative;
-	top:0;
-	left: 0;
-	z-index: 10;
-	padding:{
-		top: 3px;
-		bottom: 3px;
-	}
-	margin: 0;
-	width: 100%;	
-	height: $nav_height;
-	font-size: 1em;
-	background: {
-		color: black;
-	}
-	color: white;
-	a {
-		color: white;
-		text-decoration: none;
-		&:hover { color: red }
-	}
-//	@include box-shadow(0px 2px 8px #a3a3a3);
-	border: {
-		bottom: 2px solid orange;
-	}
-
-	#nav_left, #nav_right {
-		min-width: 25%;
-		height: $nav_height;
-		margin: 0px;
-		padding: 0px;
-		position: relative;
-		display: inline;
-		float: left;
-	}
-
-	#nav_middle {
-		width: 50%;
-		height: $nav_height;
-		margin: 0px;
-		padding: 0px;
-		position: relative;
-		display: inline;
-		float: left;
-		text-align: center;
-		a {
-			color: #BA7D27;
-			color: #FFB64F;
-			color: #FFD8A1;
-			color: white;
-			color: #FFE6C2;
-			color: #FFEFD9;
-			font-size: 17px;
-			text-shadow: 0px -2px 1px #8A5101, 0px 1px 1px #D98D00;
-			text-shadow: 0px -2px 1px #C97600, 0px 1px 1px #D98D00;
-			text-shadow: 0px -2px 1px #C27100, 0px 1px 1px #D98D00;
-			font-weight: bold;
-			text-decoration: none;
-		}
-	}
-
+.container {
+	margin-left: 25px;
+	margin-right: 25px;
 }
 
+.divider-vertical.logo {
+	margin-left: 20px;
+}
+
+.well {
+	padding: 3px;
+}

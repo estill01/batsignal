@@ -1,20 +1,12 @@
-<div id="top_nav">
-  <div id="nav_left">
-    <% if logged_in? %>
-      <%= link_to "Browse users", users_path %>
-    <% end %>
-  </div>
-  <div id="nav_middle">
-    <div id="logo_container">
-      <%= link_to "Agendo", root_path %>
-    </div>
-  </div>
-  <div id="nav_right">
-    <% if logged_in? %>
-      <%= image_tag(current_user.avatar_url(:nav)) %>
-      <%= link_to 'Log out', logout_path %>
-    <% else %>
-      <%= link_to 'Log in', login_path %> or <%= link_to 'Sign up', signup_path %>
-    <% end %>
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to 'Agendo', current_user ? user_path(current_user) : root_path, :class=>"brand" %>
+      <ul class="nav">
+        <li class="divider-vertical logo"></li>
+        <li class="active">
+          <%= link_to "Browse", users_path %>
+        </li>
+      </ul>
   </div>
 </div>

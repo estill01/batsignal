@@ -16,3 +16,5 @@ jQuery ->
 				
 	ownSortable()
 
+	$('.agenda a').pjax('[data-pjax-container]')
+

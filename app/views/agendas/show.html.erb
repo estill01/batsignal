@@ -1,13 +1,10 @@
 <h1>Agenda: <%= @agenda.name %></h1>
-<%= link_to 'Back', user_path(@user) %>
 <div id="agenda-details">
-  Created at: <%= @agenda.created_at %><br/>
-  Originator: <%= @root.username%>
-  Forked from: <%= @parent.username%>
+  Created at: <%= @agenda.created_at %>
 </div>
-<br/>
+<%= link_to '< Back', user_path(@user) %>
 <div id="agenda-description">
-
+  <br/>
   <% if @agenda.description == nil %>
     No description
   <% else %>
@@ -32,6 +29,6 @@
 <br/>
 <br/>
 <% if current_user && current_user.id == @user.id %>
-  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete %>
+  <%= link_to "Delete Agenda", user_agenda_path(@user, @agenda), :method => :delete, :class => "btn-danger"%>
 <% end %>
 

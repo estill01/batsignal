@@ -1,18 +1,22 @@
-<section id="left-side">
+<div id="left-side">
+
   <div id="profile-info">
-    <%= image_tag @user.avatar_url(:profile) %><br/>
-    <%= @user.username %><br/>
-    <% if @user == current_user %>
-      <div>
-        <%= link_to "Edit Profile", edit_user_path(@user) %>
-      </div>
-    <% end %>
-    <div id="add-to-pool">
-      <% unless @user == current_user %>
-        <%= link_to "Add to call pool", add_path %>
-      <% end %>
+    <div id="profile-avatar">
+      <%= image_tag @user.avatar_url(:profile) %>
     </div>
-    <br/>
+    <div id="profile-username-background">
+      <div id="profile-username">
+        <p><%= @user.username %></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="profile-action" class="well">
+    <% if @user == current_user %>
+        <%= link_to "Edit Profile", edit_user_path(@user), :class => "btn profile-action" %>
+    <% else %>
+        <%= link_to "Add to call pool", add_path , :class => "btn profile-action" %>
+    <% end %>
   </div>
 
   <section id="agendas">
@@ -22,12 +26,10 @@
       <p id="agenda-header-note">
         Help me with thoughts or links.
       </p>
-
-      <div id="agenda-listing">
         <% if @user == current_user %>
           <%= link_to "[Add Agenda]", new_user_agenda_path(current_user) %>
         <% end %>
-
+      <div id="agenda-listing" class="tabbable tabs-left">
         <% unless @agendas.empty? %>
           <%= render :partial => 'agendas/agendas'%>
         <% else %>
@@ -44,12 +46,12 @@
       <h1>Background</h1>
     </section>
   </section>
-</section>
+</div>
 
-<section id="right-side">
+<div id="right-side">
     Here's what I'm doing
     <br/>
     <p>
     What should I know?
     </p>
-</section>
+</div>
