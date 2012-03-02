@@ -1,9 +1,30 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :prepare_for_mobile
+  # before_filter :get_vars 
 
-  private
+
+  def get_vars
+    @user = User.find(params[:id])
+    @agendas = @user.agendas.order("position")
+    @follows = @user.all_follows
+    if @user == current_user
+      @agenda = current_user.agendas.new
+    end
+  end
+#     elsif  @user == current_user
+#       @agendas = @user.agendas.order("position")
+#       @follows = @user.all_follows
+#       @agenda = current_user.agendas.new
+# 
+#       @user = User.find(params[:id]) 
+#       @agendas = @user.agendas.order("position")
+#       @follows = @user.all_follows
+#       if @user == current_user
+#         @agenda = current_user.agendas.new
+#       end
+
+
 
   def mobile_device?
     if session[:mobile_param]

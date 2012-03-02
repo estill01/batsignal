@@ -27,5 +27,6 @@ jQuery ->
   clearFlash()
 
   $('.dropdown-toggle').dropdown()
+  
 
 

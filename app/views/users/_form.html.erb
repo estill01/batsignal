@@ -7,12 +7,12 @@
       <%= f.input :avatar_cache, :as => :hidden %>
     <% end %>
     <%= f.input :username%>
-    <%= f.input :password %>
     <%= f.input :email %>
+    <%= f.input :password %>
     <% if params[:action] == 'edit' %>
       <%= f.input :phone_number %>
     <% else %>
-      <%= f.input :phone_number, :hint => "We hate spam and don't do it." %>
+      <%= f.input :phone_number, :hint => "We hate spam and won't do it." %>
     <% end %>
     <%= f.button :submit %> 
 <% end %>

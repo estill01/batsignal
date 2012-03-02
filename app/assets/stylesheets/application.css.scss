@@ -35,6 +35,15 @@
 }
 
 #flash-container {
+	position: absolute;
+	top:40;
+	left:0;
+	width: 100%;
+	z-index:3;
+}
+
+#navbar {
+	z-index: 10;
 }
 
 #navbar-user-menu {
@@ -48,5 +57,23 @@
 		background-color: white;
 		padding: 3px;
 		border: 1px solid #787878;
+	}
+}
+
+#body-mask {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top:35;
+	left:0;
+	background-color: #91C2EB;
+	background-image: url('background/photo2-medium.jpg');
+	background-repeat: no-repeat;
+}
+
+#edit-container {
+	margin: 20px ;
+	.hero-unit {
+		padding: 25px 40px;
 	}
 }
