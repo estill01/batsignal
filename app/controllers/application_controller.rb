@@ -12,16 +12,4 @@ class ApplicationController < ActionController::Base
     end 
   end
 
-#     elsif  @user == current_user
-#       @agendas = @user.agendas.order("position")
-#       @follows = @user.all_follows
-#       @agenda = current_user.agendas.new
-# 
-#       @user = User.find(params[:id]) 
-#       @agendas = @user.agendas.order("position")
-#       @follows = @user.all_follows
-#       if @user == current_user
-#         @agenda = current_user.agendas.new
-#       end
-
 end

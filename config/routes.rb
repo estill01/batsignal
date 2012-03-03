@@ -1,5 +1,4 @@
 Batsignal::Application.routes.draw do
-#  root :to => 'signups#new'
   root :to => 'users#new'
   resources :users do
     resources :agendas do
@@ -10,8 +9,6 @@ Batsignal::Application.routes.draw do
 
   match 'users/:id/add' => 'follows#create', :as => 'add'
   match 'users/:id/remove' => 'follows#destroy', :as => 'remove'
-
-  resources :agents   # hijack the follower model/etc
 
   match '/agendas' => 'agendas#all'
 

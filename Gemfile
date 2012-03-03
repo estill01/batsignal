@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'jquery-rails'
 gem 'pg'
-gem 'rack-pjax'
+# gem 'rack-pjax'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.0'

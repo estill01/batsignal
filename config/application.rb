@@ -11,7 +11,7 @@ end
 
 module Batsignal
   class Application < Rails::Application
-    config.middleware.use Rack::Pjax
+#    config.middleware.use Rack::Pjax
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
