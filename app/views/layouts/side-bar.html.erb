@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render :partial => "layouts/core/meta" %>
+</head>
+<body>
+<%= render :partial => 'layouts/core/topnav' %>
+<%= render :partial => 'layouts/core/flash', :object => flash %>
+
+<%= render :partial => 'users/left_side', :object => @user %>
+<div id="right-side">
+  <%= yield %>
+</div>
+
+</body>
+</html>

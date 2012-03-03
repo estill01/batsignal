@@ -7,6 +7,13 @@
 <%= render :partial => 'layouts/core/navbar' %>
 <%= render :partial => 'layouts/core/flash', :object => flash %>
 
+<<<<<<< HEAD
+=======
+<% if logged_in? %>
+  <%= render :partial => 'layouts/left_side/left_side', :object => @me %>
+<% end %>
+
+>>>>>>> layout
 <div data-pjax-container>
   <%= yield %>
 </div>

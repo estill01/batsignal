@@ -1,0 +1,14 @@
+<div id="profile-info">
+  <div id="profile-avatar">
+      <%= link_to(image_tag(@me.avatar_url(:profile)), user_path(current_user))%>
+  </div>
+  <div id="profile-username-background">
+    <div id="profile-username">
+      <p><%= @me.username %></p>
+    </div>
+  </div>
+</div>
+
+<div id="profile-action" class="well">
+  <%= link_to "New Agenda", new_user_agenda_path(current_user), :class => "btn btn-primary profile-action", :id => "new-agenda-button" %> 
+</div>

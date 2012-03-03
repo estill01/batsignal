@@ -1,0 +1,21 @@
+<div id="left-side">
+  <%= render :partial => 'layouts/left_side/profile_info', :object => @me %>
+  <section id="notifications">
+    <div class="notification">
+      No new updates
+    </div>
+  </section>  
+  <section id="agendas">
+    <section id="active-agendas">
+      <dt>Agendas</dt>
+        <div id="agenda-listing" class="tabbable tabs-left">
+          <% unless @my_agendas.empty? %>
+            <%= render :partial => 'agendas/agendas'%>
+          <% else %>
+            <p>No agendas</p>
+          <% end %>
+        </div>
+    </section>
+  </section>
+</div>
+

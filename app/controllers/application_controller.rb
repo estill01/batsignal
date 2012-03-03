@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+<<<<<<< HEAD
 #   before_filter :me
 # 
 #   def me
@@ -14,7 +15,20 @@ class ApplicationController < ActionController::Base
     if @user == current_user
       @agenda = current_user.agendas.new
     end
+=======
+
+  before_filter :left_side_data
+  
+  def left_side_data
+    if current_user 
+      @me = current_user 
+      @my_agendas = @me.agendas.find(:all)
+      @my_follows = @me.all_follows
+      @new_agenda = @me.agendas.new
+    end 
+>>>>>>> layout
   end
+
 #     elsif  @user == current_user
 #       @agendas = @user.agendas.order("position")
 #       @follows = @user.all_follows
@@ -27,18 +41,4 @@ class ApplicationController < ActionController::Base
 #         @agenda = current_user.agendas.new
 #       end
 
-
-
-  def mobile_device?
-    if session[:mobile_param]
-      session[:mobile_param] == "1"
-    else
-      request.user_agent =~ /Mobile/
-    end
-  end
-  helper_method :mobile_device?
-
-  def prepare_for_mobile
-    session[:mobile_param] = params[:mobile] if params[:mobile]
-  end
 end

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 <div data-pjax-container>
   Hello from User#show
 </div>
 
+=======
+<%= image_tag(@user.avatar_url(:profile)) %> <br/>
+<% unless @user == @me %>
+  <%= link_to "Add to call pool", add_path , :class => "btn btn-success profile-action", :id => "add-to-call-pool", 'data-content' => "hover!" %>
+<% end %>
+>>>>>>> layout
