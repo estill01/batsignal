@@ -1,0 +1,34 @@
+<div id="profile-action" class="well">
+  <% case @user %> 
+  <% when @me %>
+      <% case request.fullpath %>   
+      <% when user_path(@me) %>
+          <%= link_to "New Agenda", new_user_agenda_path(@me, @my_agenda),
+          :class => "btn btn-primary profile-action" %>
+      <% when user_agenda_path(@me, @my_agenda) %>
+          <%= link_to "Edit Agenda?", edit_user_agenda_path(@me, @my_agenda),
+          :class => "btn btn-danger profile-action" %>
+      <% when edit_user_agenda_path(@me, @my_agenda) %>
+          <%= link_to "Cancel", :back, :class => "btn" %>
+      <% when edit_user_path(@me) %>
+          <%= link_to "Cancel", :back, :class => "btn" %>
+      <% else %>
+          <%= link_to "Home", user_path(@me), :class => "btn" %> 
+      <% end %>
+  <% when nil %>
+        <%= link_to "Home", user_path(@me), :class => "btn" %> 
+  <% else %>  
+      <% case request.fullpath %>   
+      <% when user_path(@user) %>
+          <%= link_to "Add to call pool", add_path , :class => "btn btn-success profile-action",
+          :id => "add-to-call-pool" %>
+      <% when user_agenda_path(@user, @agenda) %>
+          <%= link_to "Fork Agenda", fork_user_agenda_path(@user, @agenda), :method => :post,
+          :class => "btn btn-success profile-action" %>
+      <% when users_path %>
+        <%= link_to "Home", user_path(@me), :class => "btn" %> 
+      <% else %>
+        <%= link_to "Home", user_path(@me), :class => "btn" %> 
+      <% end %>
+  <% end %>
+</div>

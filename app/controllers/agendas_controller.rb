@@ -94,8 +94,7 @@ class AgendasController < ApplicationController
     
     if @fork.save
       @agenda.add_child @fork
-      render 'show'
-      flash.now[:notice] = "Forked Agenda."
+      redirect_to user_agenda_path(@user, @agenda), :notice => "Agenda forked."
     else
       render 'show'
       flash.now[:error] = "Failed to fork Agenda."

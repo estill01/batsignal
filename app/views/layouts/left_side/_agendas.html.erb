@@ -1,0 +1,7 @@
+<ol>
+  <% @my_agendas.each do |agenda| %>
+    <%= content_tag_for :li, agenda, :class => "agenda" do %>
+      <%= render :partial => "layouts/left_side/agenda", :locals => {:agenda => agenda} %>
+    <% end %>
+  <% end %>
+</ol>

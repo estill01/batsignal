@@ -1,4 +1,14 @@
 <%= image_tag(@user.avatar_url(:profile)) %> <br/>
-<% unless @user == @me %>
-  <%= link_to "Add to call pool", add_path , :class => "btn btn-success profile-action", :id => "add-to-call-pool", 'data-content' => "hover!" %>
-<% end %>
+<br/>
+<h3>Agendas</h3>
+<dl>
+  <% @user.agendas.each do |agenda| %>
+    <dt id="#{@user.username}-agenda-#{agenda.id}">
+      <%= link_to(agenda.name, user_agenda_path(@user, agenda)) %>
+    <dt>
+    <dd>
+      <%= agenda.description %>
+    </dd>
+    <br/>
+  <% end %>
+</dl>

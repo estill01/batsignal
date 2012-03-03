@@ -1,0 +1,16 @@
+<div id="profile-info">
+  <div id="profile-avatar">
+    <%= link_to(image_tag(@me.avatar_url(:profile)), user_path(@me)) %>
+  </div>
+  <div id="profile-username-background">
+    <div id="profile-username">
+      <p id="profile-name-holder">
+        <% if request.fullpath == user_path(@me) %>
+          <%= @me.username %>
+        <% else %>
+          <br/>
+        <% end %>
+      </p>
+    </div>
+  </div>
+</div>

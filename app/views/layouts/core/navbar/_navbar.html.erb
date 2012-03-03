@@ -1,0 +1,12 @@
+<div class="navbar"> 
+  <div class="navbar-inner">
+    <div class="container">
+      <% if logged_in? %>
+        <%= render :partial => "logged_in_nav" %>
+      <% else %>
+        <%= render :partial => "logged_out_nav" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

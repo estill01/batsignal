@@ -6,13 +6,10 @@
       <%= f.input :avatar, :as => :file, :label => 'Change avatar' %>
       <%= f.input :avatar_cache, :as => :hidden %>
     <% end %>
-    <%= f.input :username%>
+    <%= f.input :username %>
     <%= f.input :email %>
     <%= f.input :password %>
-    <% if params[:action] == 'edit' %>
-      <%= f.input :phone_number %>
-    <% else %>
-      <%= f.input :phone_number, :hint => "We hate spam and won't do it." %>
-    <% end %>
-    <%= f.button :submit %> 
+    <%= f.input :phone_number %>
+    <p class="help-block">We hate spam and won't do it.</p><br/>
+    <%= f.button :submit, :class => "btn btn-primary" %> 
 <% end %>
