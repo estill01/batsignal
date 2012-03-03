@@ -1,8 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-
-  # before_filter :get_vars 
-
+#   before_filter :me
+# 
+#   def me
+#     @user = current_user
+#     @agendas = @user.agendas
+#   end
 
   def get_vars
     @user = User.find(params[:id])

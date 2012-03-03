@@ -7,7 +7,9 @@
 <%= render :partial => 'layouts/core/navbar' %>
 <%= render :partial => 'layouts/core/flash', :object => flash %>
 
-<%= yield %>
+<div data-pjax-container>
+  <%= yield %>
+</div>
 
 </body>
 </html>
