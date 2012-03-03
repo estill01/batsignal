@@ -1,4 +1,3 @@
-<%= link_to agenda.name, user_agenda_path(@user, agenda), :class => "agenda" %><br/>
+<%= link_to agenda.name, user_agenda_path(@user, agenda) %><br/>
 <div class="agenda-description">
-  <%= truncate(agenda.description, :length => 100, :omission => '... =>') %>
 </div>

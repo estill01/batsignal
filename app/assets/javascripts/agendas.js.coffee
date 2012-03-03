@@ -12,9 +12,14 @@ jQuery ->
 			$("#agendas").sortable
 				axis: 'y'
 				update: ->
-					$.post($(this).data('update-url'), $(this).sortable('serialize'))
-				
+					$.post($("#agendas").data('update-url'), $("#agendas").sortable('serialize'))
+
+#	ownSortable() 
 
 	$('.agenda a').pjax('[data-pjax-container]')
+
+	$('#agendas').click => $(this).slideUp(500)
+
+		
 	
 	

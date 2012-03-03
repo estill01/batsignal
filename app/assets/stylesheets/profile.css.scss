@@ -14,7 +14,7 @@
 	clear: left;
 	min-width: 150px;
 	max-width: 150px;
-
+	@include box-shadow(0px 2px 1px 3px #242424);
 }
 
 #right-side {
