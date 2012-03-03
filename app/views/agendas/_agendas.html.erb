@@ -1,5 +1,5 @@
 <ol>
-  <% @agendas.each do |agenda| %>
+  <% @my_agendas.each do |agenda| %>
     <%= content_tag_for :li, agenda, :class => "agenda" do %>
       <%= render :partial => "agendas/agenda", :locals => {:agenda => agenda} %>
     <% end %>
