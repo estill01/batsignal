@@ -9,7 +9,11 @@
     <%= f.input :username %>
     <%= f.input :email %>
     <%= f.input :password %>
-    <%= f.input :phone_number %>
-    <p class="help-block">We hate spam and won't do it.</p><br/>
+    <% if params[:action ] == 'edit' %>
+      <%= f.input :phone_number %>
+    <% end %>
+    <% unless params[:action] == 'edit' %>
+      <p class="help-block">We hate spam and won't do it.</p><br/>
+    <% end %>
     <%= f.button :submit, :class => "btn btn-primary" %> 
 <% end %>

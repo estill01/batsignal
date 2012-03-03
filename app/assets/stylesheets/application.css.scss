@@ -77,5 +77,11 @@
 	margin: 20px ;
 	.hero-unit {
 		padding: 25px 40px;
+		@include box-shadow(0px 0px 0px 5px whiteSmoke);
+		border: 2px solid #CADDEB;
+	}
+	width: 300px;
+	.help-block {
+		font-size: 16px;
 	}
 }

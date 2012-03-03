@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   validates :username, :uniqueness => true
   validates :username, :presence => true
-  validates :phone_number, :presence => true
+#  validates :phone_number, :presence => true
   validates :password, :presence => true
   validates :password, :length => {:minimum => 4}
 
