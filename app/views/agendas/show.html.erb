@@ -16,7 +16,7 @@
       <% if @agenda.description == nil %>
         <%= link_to "Add description", edit_user_agenda_path(current_user, @agenda) %>
       <% else %>
-        <%= link_to "Edit description", edit_user_agenda_path(current_user, @agenda) %>
+        <%= link_to "Edit description", edit_user_agenda_path(current_user, @agenda), :class => "btn" %>
       <% end %>
     </div>
   <% else %>
