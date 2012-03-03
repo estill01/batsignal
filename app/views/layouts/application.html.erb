@@ -9,11 +9,12 @@
 
 <% if logged_in? %>
   <%= render :partial => 'layouts/left_side/left_side', :object => @me %>
-<% end %>
-
-<div data-pjax-container>
+  <div id="right-side">
+    <%= yield %>
+  </div>
+<% else %>
   <%= yield %>
-</div>
+<% end %>
 
 </body>
 </html>

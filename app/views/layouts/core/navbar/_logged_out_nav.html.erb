@@ -3,15 +3,15 @@
   <li class="divider-vertical logo"></li>
   <li><%= link_to "Learn more", root_path %></li>
         <li class="divider-vertical logo"></li>
-  <li><%= link_to "Get our App", root_path %></li>
+  <li><%= link_to "Mobile", root_path %></li>
         <li class="divider-vertical logo"></li>
   <li><%= link_to "API", root_path %></li>
+        <li class="divider-vertical logo"></li>
+  <li><%= link_to "Contact", root_path %></li>
         <li class="divider-vertical logo"></li>
   <% unless request.fullpath == login_path %>
   <li><%= link_to "Log in", login_path %></li>
   <% else %>
   <li><%= link_to "Sign up", signup_path %></li>
   <% end %>
-        <li class="divider-vertical logo"></li>
-  <li><%= link_to "Contact", root_path %></li>
 </ul>

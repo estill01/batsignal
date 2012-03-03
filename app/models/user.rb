@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   validates :username, :uniqueness => true
-  validates :username, :presence => true
+  validates :username, :length => {:minimum => 1}
 #  validates :phone_number, :presence => true
-  validates :password, :presence => true
+#  validates :password, :presence => true
   validates :password, :length => {:minimum => 4}
 
   # enable semantic urls (i.e., users/estill01 vs. users/6)
@@ -23,6 +23,5 @@ class User < ActiveRecord::Base
 
   acts_as_audited
   acts_as_audited :associated_with => :agenda
-  
 
 end
