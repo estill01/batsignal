@@ -5,12 +5,13 @@
 	height: auto;
 	position: fixed;
 	z-index:6;
-	margin: 0px;
+	margin:40px 0 0 0;
 	padding: 0px;
-	width: 20%;
-	max-width: 150px;
-	min-width: 150px;
+	width: 25%;
+	max-width: 175px;
+	min-width: 175px;
 	@include box-shadow(0px 2px 1px 3px #242424);
+	background-color: white;
 }
 
 .navbar {
@@ -34,7 +35,7 @@
 #profile-info {
 	position: relative;
 	display: block;
-	margin: 40px 0 0 0;
+	margin: 0;
 	padding: 0;
 
 	#profile-avatar {
@@ -91,5 +92,5 @@
 // RIGHT SIDE 
 
 #right-side {
-	background-color:whiteSmoke;
+//	background-color:whiteSmoke;
 }

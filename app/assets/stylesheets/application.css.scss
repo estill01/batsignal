@@ -15,6 +15,9 @@
 @import 'profile';
 @import 'profile-edit';
 
+body {
+	@include linear-gradient(#D6E5F2, #FAFDFF);
+}
 .container {
 	margin-left: 25px;
 	margin-right: 25px;
@@ -83,5 +86,30 @@
 	width: 300px;
 	.help-block {
 		font-size: 16px;
+	}
+}
+
+#main-content-container {
+	background-color: whiteSmoke;
+	@include border-radius(5px);
+	padding: 15px;
+	@include box-shadow(inset 1px 1px 1px gray);
+}
+
+#main-footer {
+	width: 100%;
+	min-height: 60px;
+	background-color: white;
+	position: relative;
+	display:block;
+	clear: both;
+	border-top: 2px solid orange;
+
+	#footer-container {
+		margin: 0 auto;
+		width: 900px;
+		height: 100%;
+		padding: 25px 0 0 55px;
+		font-weight: 200;
 	}
 }
